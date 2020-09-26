@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    tools:context=".New_task">
+
+
+    <Button
+        android:id="@+id/add_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:clickable="true"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="+ Add"
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/task_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_task"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        app:cardBackgroundColor="#1e1e1e"
+        app:cardCornerRadius="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#e0e0e0">
+
+                <EditText
+                    style="@style/CustomTextInputTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-light"
+                    android:hint="Remind me to..."
+                    android:inputType="textEmailAddress"
+                    android:textColor="#e0e0e0"
+                    android:textSize="30sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:textColorHint="#e0e0e0">
+
+                <EditText
+                    style="@style/CustomTextInputTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-light"
+                    android:hint="Description(Optional)"
+                    android:inputType="textEmailAddress"
+                    android:textColor="#e0e0e0"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/priority"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/desc"
+                android:layout_marginTop="5dp"
+                android:fontFamily="sans-serif-condensed"
+                android:padding="5dp"
+                android:text="Priority"
+                android:textColor="#e0e0e0" />
+
+            <LinearLayout
+                android:id="@+id/priority_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/priority"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                android:weightSum="3">
+
+                <Button
+                    android:id="@+id/high"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/pri_button_bg"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="High"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/mid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/pri_button_bg"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Medium"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/low"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/pri_low"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Low"
+                    android:textColor="#fff"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/time_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/task_layout"
+        android:layout_margin="10dp"
+        android:background="@drawable/pri_button_bg"
+        app:cardBackgroundColor="#1e1e1e"
+        app:cardCornerRadius="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/sub_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:fontFamily="sans-serif-condensed"
+                android:padding="5dp"
+                android:text="Date &amp; Time"
+                android:textColor="#e0e0e0"
+                android:textSize="18sp" />
+
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sub_title"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:fontFamily="sans-serif-condensed"
+                android:padding="5dp"
+                android:text="Date"
+                android:textColor="#e0e0e0"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sub_title"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/date"
+                android:clickable="true"
+                android:fontFamily="sans-serif-condensed"
+                android:padding="5dp"
+                android:text="Time"
+                android:textColor="#e0e0e0"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:id="@+id/notification_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/time"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/notification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Notification"
+                    android:textColor="#e0e0e0" />
+
+                <RadioButton
+                    android:id="@+id/alarm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Alarm"
+                    android:textColor="#e0e0e0" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/notification_group"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:padding="5dp"
+                android:text="Category"
+                android:textColor="#e0e0e0"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/category_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/notification_group"
+                android:layout_toRightOf="@+id/category"
+                android:clickable="true"
+                android:theme="@style/Animation.Design.BottomSheetDialog" />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:visibility="gone"
+        android:background="@drawable/view_task_bottom_bg"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:id="@+id/delete"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/delete"
+            android:layout_alignParentStart="true"
+            android:layout_margin="10dp"/>
+        <ImageView
+            android:id="@+id/complete"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/done"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="10dp"
+            app:tint="#00ff00" />
+    </RelativeLayout>
+
+</RelativeLayout>
+
+
+
+
+
+
+

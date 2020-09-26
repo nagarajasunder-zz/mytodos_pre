@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/date_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:text="Date and day"
+        android:visibility="gone"
+        android:textColor="#e0e0e0"
+        android:textSize="20sp"/>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/date_day"
+        android:elevation="5dp"
+        app:cardBackgroundColor="#1e1e1e"
+        app:cardCornerRadius="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="sans-serif-condensed"
+                android:padding="5dp"
+                android:text="Day and Date"
+                android:textColor="#e0e0e0"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/priority"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="5dp"
+                android:fontFamily="sans-serif-condensed"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp"
+                android:text="Priority"
+                android:textColor="#e0e0e0"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/task_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/time"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="sans-serif-condensed"
+                android:padding="5dp"
+                android:text="Task title"
+                android:textColor="#e0e0e0"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/task_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/task_title"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toLeftOf="@+id/alarm"
+                android:fontFamily="sans-serif-condensed-light"
+                android:padding="5dp"
+                android:text="Task desc"
+                android:textColor="#e0e0e0"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/alarm"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_below="@+id/task_title"
+                android:layout_marginTop="5dp"
+                android:layout_toLeftOf="@+id/falls_on"
+                android:padding="5dp"
+                android:src="@drawable/alarm"
+                app:tint="@color/colorPrimary" />
+
+
+            <TextView
+                android:id="@+id/falls_on"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/task_title"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/falls_on_bg"
+                android:fontFamily="sans-serif-condensed"
+                android:padding="5dp"
+                android:textColor="#e0e0e0"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

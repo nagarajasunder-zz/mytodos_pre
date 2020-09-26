@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#101E70"
+    tools:context=".Alarm_Screen">
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/time"
+        android:text="TASK NAME"
+        android:textSize="30dp"
+        android:textColor="#fff"
+        android:fontFamily="sans-serif-condensed"
+        android:textAlignment="center"
+        android:layout_margin="30dp"/>
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Time"
+        android:textSize="30dp"
+        android:textColor="#fff"
+        android:layout_margin="10dp"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_above="@+id/ripple"
+        android:textAlignment="center"/>
+
+
+    <com.skyfishjy.library.RippleBackground
+        android:id="@+id/ripple"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        app:rb_radius="30dp"
+        app:rb_rippleAmount="3"
+        app:rb_duration="3000">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/alarm"
+            android:layout_centerInParent="true"/>
+    </com.skyfishjy.library.RippleBackground>
+
+    <Button
+        android:id="@+id/dismiss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ripple"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:text="Mark as Completed"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="20dp"/>
+
+
+    <Button
+        android:id="@+id/snooze"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dismiss"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:text="Snooze"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="20dp"/>
+
+</RelativeLayout>
